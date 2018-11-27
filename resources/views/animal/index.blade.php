@@ -1,9 +1,9 @@
 <h1>Exibindo registros de animais</h1>
 <p><a href="/animal/create">Inserir animal</a></p>
 <ul>
-    @foreach ($animal as $a)
+    @foreach ($animals as $animal)
     <li>
-        Nome: {{$a->nome}} |
+        Nome: {{$animal->nome}} |
         <a href="/animal/edit/{{$animal->id}}">Editar</a>
         <a href="/animal/excluir/{{$animal->id}}">Excluir</a>
     </li>

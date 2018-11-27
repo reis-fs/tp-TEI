@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd3c45bf6befc08862369c152e1e5ceb3
+class ComposerStaticInit1806d3642ce8de10051f4933d02a6591
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -340,14 +340,17 @@ class ComposerStaticInitd3c45bf6befc08862369c152e1e5ceb3
     );
 
     public static $classMap = array (
+        'App\\Animal' => __DIR__ . '/../..' . '/app/Animal.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\AnimalController' => __DIR__ . '/../..' . '/app/Http/Controllers/AnimalController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -3780,11 +3783,11 @@ class ComposerStaticInitd3c45bf6befc08862369c152e1e5ceb3
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd3c45bf6befc08862369c152e1e5ceb3::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd3c45bf6befc08862369c152e1e5ceb3::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInitd3c45bf6befc08862369c152e1e5ceb3::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitd3c45bf6befc08862369c152e1e5ceb3::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitd3c45bf6befc08862369c152e1e5ceb3::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit1806d3642ce8de10051f4933d02a6591::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit1806d3642ce8de10051f4933d02a6591::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit1806d3642ce8de10051f4933d02a6591::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit1806d3642ce8de10051f4933d02a6591::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit1806d3642ce8de10051f4933d02a6591::$classMap;
 
         }, null, ClassLoader::class);
     }

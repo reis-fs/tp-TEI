@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Animal;
+use App\User;
 use Illuminate\Http\Request;
 
 class AnimalController extends Controller
@@ -14,8 +15,8 @@ class AnimalController extends Controller
      */
     public function index()
     {
-        $animal = Animal::all();
-        return view ('animal.index', compact(['animal']));
+        $animals = Animal::all();
+        return view ('animal.index', compact(['animals']));
     }
 
     /**
@@ -31,7 +32,8 @@ class AnimalController extends Controller
         $especie = null;
         $raca = null;
         $tamanho = null;
-        return view('animal.editar', compact(['destino','nome','idade','especie','raca','tamanho']));
+        $users_id = null;
+        return view('animal.editar', compact(['destino','nome','idade','especie','raca','tamanho', 'users_id']));
     }
 
     /**
@@ -50,10 +52,10 @@ class AnimalController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Animal  $animal
+     * @param  \App\Animal  $animals
      * @return \Illuminate\Http\Response
      */
-    public function show(Animal $animal)
+    public function show(Animal $animals)
     {
         //
     }
@@ -61,26 +63,27 @@ class AnimalController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Animal  $animal
+     * @param  \App\Animal  $animals
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $animal = Animal::find($id);
-        $nome = $animal->nome;
-        $idade = $animal->idade;
-        $especie = $animal->especie;
-        $raca = $animal->raca;
-        $tamanho = $animal->tamanho;
-        $destino = '/animal/update/' . $animal->id;
-        return view('animal.editar', compact(['nome','idade','especie','raca','tamanho','destino']));
+        $animals = Animal::find($id);
+        $nome = $animals->nome;
+        $idade = $animals->idade;
+        $especie = $animals->especie;
+        $raca = $animals->raca;
+        $tamanho = $animals->tamanho;
+        $users_id = $animals->users_id;
+        $destino = '/animal/update/' . $animals->id;
+        return view('animal.editar', compact(['nome','idade','especie','raca','tamanho','destino', 'users_id']));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Animal  $animal
+     * @param  \App\Animal  $animals
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -92,7 +95,7 @@ class AnimalController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Animal  $animal
+     * @param  \App\Animal  $animals
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

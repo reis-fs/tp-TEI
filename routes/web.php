@@ -14,17 +14,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/animal', 'AnimalController@index');
+Route::get('/animal', 'AnimalController@index')->middleware('auth');
 
-Route::get('/animal/create', 'AnimalController@create');
+Route::get('/animal/create', 'AnimalController@create')->middleware('auth');
 
-Route::post('/animal/store', 'AnimalController@store');
+Route::post('/animal/store', 'AnimalController@store')->middleware('auth');
 
-Route::get('/animal/edit/{id}', 'AnimalController@edit');
+Route::get('/animal/edit/{id}', 'AnimalController@edit')->middleware('auth');
 
-Route::post('/animal/update/{id}', 'AnimalController@update');
+Route::post('/animal/update/{id}', 'AnimalController@update')->middleware('auth');
 
-Route::get('/animal/excluir/{id}', 'AnimalController@destroy');
+Route::get('/animal/excluir/{id}', 'AnimalController@destroy')->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
