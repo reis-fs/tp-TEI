@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 Route::get('/animal', 'AnimalController@index')->middleware('auth');
 
@@ -25,10 +25,6 @@ Route::get('/animal/edit/{id}', 'AnimalController@edit')->middleware('auth');
 Route::post('/animal/update/{id}', 'AnimalController@update')->middleware('auth');
 
 Route::get('/animal/excluir/{id}', 'AnimalController@destroy')->middleware('auth');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
