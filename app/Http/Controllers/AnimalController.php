@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Animal;
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
 class AnimalController extends Controller
@@ -16,7 +17,9 @@ class AnimalController extends Controller
     public function index()
     {
         $animals = Animal::all();
-        return view ('animal.index', compact(['animals']));
+        $users_id = Auth::user()->id;
+        $users = User::all();
+        return view ('animal.index', compact(['animals','users_id','users']));
     }
 
     /**
@@ -32,7 +35,8 @@ class AnimalController extends Controller
         $especie = null;
         $raca = null;
         $tamanho = null;
-        $users_id = null;
+        $users_id = Auth::user()->id;
+        echo("<script>console.log('PHP: ".$users_id."');</script>");
         return view('animal.editar', compact(['destino','nome','idade','especie','raca','tamanho', 'users_id']));
     }
 

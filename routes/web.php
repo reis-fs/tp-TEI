@@ -12,6 +12,8 @@
 */
 
 Route::get('/', function () {
+    //$data = session('id');
+    //echo("<script>console.log('PHP: ".$data."');</script>");
     return view('home');
 });
 Route::get('/animal', 'AnimalController@index')->middleware('auth');

@@ -32,6 +32,11 @@
                     <input class="form-control" placeholder="Digite o tamanho" type="text" name="tamanho" value="{{$tamanho}}" required>
                 </div>
 
+                <div class="form-group" hidden>
+                    <label for="users_id">Usuario</label>
+                    <input class="form-control" placeholder="Digite o usuario" type="text" name="users_id" value="{{$users_id}}">
+                </div>
+
                 <div class="row justify-content-center">
                     <input class="btn btn-pet" type="submit" value="Gravar">
                     {{csrf_field()}}
